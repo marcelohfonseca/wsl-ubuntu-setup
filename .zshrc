@@ -137,7 +137,6 @@ alias python=python3
 alias py=python3
 alias ipy=ipython
 alias activate="source .venv/bin/activate"
-alias poetry-activate="source $(poetry env info --path)/bin/activate"
 alias "pip-upgrade"="python3 -m pip install --upgrade pip"
 alias "install-ipykernel"="pip install ipykernel"
 alias "install-kernel"='python -m ipykernel install --user --name venv --display-name "Python (venv)"'
@@ -153,3 +152,4 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
