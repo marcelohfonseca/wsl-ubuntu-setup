@@ -6,7 +6,7 @@ Este repositório contém meus arquivos de configuração (dotfiles) para bash, 
 
 ```txt
 ./
-aliases/
+├── aliases/
 │   └── .aliases
 ├── dotfiles/
 │   ├── bash/
