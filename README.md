@@ -4,49 +4,51 @@ Este repositório contém meus arquivos de configuração (dotfiles) para bash, 
 
 ## Estrutura do Projeto
 
-.\
-├── aliases/\
-│   └── .aliases\
-├── dotfiles/\
-│   ├── bash/\
-│   │   ├── .bashrc\
-│   │   └── .profile\
-│   ├── git/\
-│   │   └── .gitconfig\
-│   └── zsh/\
-│       ├── .p10k.zsh\
-│       ├── .zprofile\
-│       └── .zshrc\
-├── install/\
-│   ├── library/\
-│   │   └── python_libraries.sh\
-│   ├── system/\
-│   │   └── prerequisites.sh\
-│   ├── tools/\
-│   │   ├── docker.sh\
-│   │   ├── gitflow_github.sh\
-│   │   ├── pip_pipx.sh\
-│   │   ├── pyenv.sh\
-│   │   ├── terminal_tools.sh\
-│   │   └── zsh.sh\
-│   └── utilities/\
-│       └── user_setup.sh\
-├── scripts/\
-│   └── setup.sh\
-└── README.md\
+```txt
+./
+aliases/
+│   └── .aliases
+├── dotfiles/
+│   ├── bash/
+│   │   ├── .bashrc
+│   │   └── .profile
+│   ├── git/
+│   │   └── .gitconfig
+│   └── zsh/
+│       ├── .p10k.zsh
+│       ├── .zprofile
+│       └── .zshrc
+├── install/
+│   ├── library/
+│   │   └── python_libraries.sh
+│   ├── system/
+│   │   └── prerequisites.sh
+│   ├── tools/
+│   │   ├── docker.sh
+│   │   ├── gitflow_github.sh
+│   │   ├── pip_pipx.sh
+│   │   ├── pyenv.sh
+│   │   ├── terminal_tools.sh
+│   │   └── zsh.sh
+│   └── utilities/
+│       └── user_setup.sh
+├── scripts/
+│   └── setup.sh
+└── README.md
+```
 
 ### Como Usar
 
-1. Clone o repositório:
+#### Clone o repositório
 
-```bash
+```sh
 git clone git@github.com:marcelohfonseca/dotfiles.git ~/.dotfiles
 
 ```
 
-2. Execute o script de instalação:
+#### Execute o script de instalação
 
-```bash
+```sh
 ~/.dotfiles/scripts/setup.sh
 ```
 
@@ -57,10 +59,10 @@ git clone git@github.com:marcelohfonseca/dotfiles.git ~/.dotfiles
 
 1. Clona o repositório para ~/.dotfiles (ou sobrescreve se já existir).
 2. Executa os scripts de instalação em ordem:
-    a. **system**/: Instala pré-requisitos do sistema.
-    b. **tools**/: Instala ferramentas como zsh, pyenv, docker, etc.
-    c. **utilities**/: Configura o usuário, como o arquivo .gitconfig.
-    d. **library**/: Instala bibliotecas e frameworks.
+    * **system**/: Instala pré-requisitos do sistema.
+    * **tools**/: Instala ferramentas como zsh, pyenv, docker, etc.
+    * **utilities**/: Configura o usuário, como o arquivo .gitconfig.
+    * **library**/: Instala bibliotecas e frameworks.
 3. Cria links simbólicos dos dotfiles para o diretório $HOME.
 4. Recarrega as novas configurações do zsh.
 
