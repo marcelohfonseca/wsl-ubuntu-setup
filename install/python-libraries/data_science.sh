@@ -5,11 +5,11 @@
 # --------------------------------------------------
 
 # jupyter notebooks
-uv pip install jupyterlab # https://pypi.org/project/jupyterlab/
-uv pip install ipywidgets --include-deps # https://pypi.org/project/ipywidgets/
+uv tool install jupyterlab # https://pypi.org/project/jupyterlab/
+uv tool install ipywidgets # https://pypi.org/project/ipywidgets/
 
 # project structure for doing and sharing data science work
-uv pip install cookiecutter # https://drivendata.github.io/cookiecutter-data-science/
+uv tool install cookiecutter # https://drivendata.github.io/cookiecutter-data-science/
 
 # EDA
 # pip install pandas # https://pandas.pydata.org/
