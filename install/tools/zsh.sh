@@ -26,6 +26,3 @@ git clone https://github.com/agkozak/zsh-z ~/.oh-my-zsh/custom/plugins/zsh-z
 # https://github.com/romkatv/powerlevel10k#oh-my-zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 # set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc
-
-# make it your default shell
-chsh -s $(which zsh) $USER
