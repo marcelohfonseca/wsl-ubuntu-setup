@@ -15,7 +15,6 @@ clone_dotfiles() {
     if [ -d "$DOTFILES_DIR" ]; then
         read -p "O diretório .dotfiles já existe. Deseja sobrescrevê-lo? (s/n) " confirm
         if [[ "$confirm" != "s" ]]; then
-            echo "Cancelando a instalação."
             exit 1
         fi
         rm -rf "$DOTFILES_DIR"
@@ -36,23 +35,17 @@ create_symlink() {
 # function to execute scripts
 install_scripts() {
     local category="$1"
-    shopt -s nullglob
-    local scripts=("$DOTFILES_DIR/install/$category"*.sh)
-    if [ ${#scripts[@]} -eq 0 ]; then
-        echo "Nenhum script encontrado em $DOTFILES_DIR/install/$category."
-        return
-    fi
-    for script in "${scripts[@]}"; do
-        echo "Executando script: $script"
-        bash "$script" || true
+    for script in "$DOTFILES_DIR/install/$category/"*.sh; do
+        echo ""
+        echo "-> Executando script: $script"
+        bash "$script"
     done
 }
 
 # install system prerequisites
+echo ""
+echo "-> Instalando pré-requisitos..."
 bash prerequisites.sh || { echo "Falha ao executar prerequisites.sh. Abortando."; exit 1; }
-
-# check git installation
-command -v git >/dev/null 2>&1 || { echo "Git não está instalado. Abortando." >&2; exit 1; }
 
 # install scripts
 install_scripts "tools"
@@ -78,6 +71,8 @@ rm -rf "$HOME/.p10k.zsh"
 create_symlink "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # reload new settings
+echo ""
+echo "-> Carregando perfil do zsh..."
 source ~/.zshrc || { echo "Falha ao tentar aplicar as mudanças em ~/.zshrc. Reinicie seu terminal."; exit 1; }
 
 # make it your default shell
