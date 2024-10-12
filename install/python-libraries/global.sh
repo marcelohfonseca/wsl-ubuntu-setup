@@ -5,30 +5,30 @@
 # --------------------------------------------------
 
 # commitizen global installation
-uv pip install commitizen # https://pypi.org/project/commitizen/
-
-# libraries for virtual development environments
-uv pip install python-dotenv # https://pypi.org/project/python-dotenv/
-#pip install poetry # https://python-poetry.org/
+uv tool install commitizen # https://pypi.org/project/commitizen/
 
 # libraries for code formatting and styling
-uv pip install black # https://black.readthedocs.io/en/stable/index.html
-uv pip install isort # https://pycqa.github.io/isort/
-uv pip install prospector # https://pypi.org/project/prospector/
-uv pip install mypy # https://pypi.org/project/mypy/
+uv tool install black # https://black.readthedocs.io/en/stable/index.html
+uv tool install isort # https://pycqa.github.io/isort/
+uv tool install prospector # https://pypi.org/project/prospector/
+uv tool install mypy # https://pypi.org/project/mypy/
 
 # libraries for security
-uv pip install bandit # https://pypi.org/project/bandit/
+uv tool install bandit # https://pypi.org/project/bandit/
 #pip install pip-audit # https://pypi.org/project/pip-audit/
 
 # libraries for tests
-uv pip install pytest # https://pypi.org/project/pytest/
+uv tool install pytest # https://pypi.org/project/pytest/
 #pip install tox # https://pypi.org/project/tox/
 
 # ipython
-uv pip install ipython # https://pypi.org/project/ipython/
-uv pip install ipython-sql --include-deps # https://pypi.org/project/ipython-sql/
-uv pip install ipdb # https://pypi.org/project/ipdb/
+uv tool install ipython # https://pypi.org/project/ipython/
+uv tool install ipython-sql --include-deps # https://pypi.org/project/ipython-sql/
+uv tool install ipdb # https://pypi.org/project/ipdb/
+
+# libraries for virtual development environments
+#pip install python-dotenv # https://pypi.org/project/python-dotenv/
+#pip install poetry # https://python-poetry.org/
 
 # libraries for markdown writing
 #pip install mkdocs # https://pypi.org/project/mkdocs/
