@@ -23,7 +23,7 @@ uv tool install pytest # https://pypi.org/project/pytest/
 
 # ipython
 uv tool install ipython # https://pypi.org/project/ipython/
-uv tool install ipython-sql --include-deps # https://pypi.org/project/ipython-sql/
+uv tool install ipython-sql # https://pypi.org/project/ipython-sql/
 uv tool install ipdb # https://pypi.org/project/ipdb/
 
 # libraries for virtual development environments
