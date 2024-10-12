@@ -45,7 +45,7 @@ install_scripts() {
 # install system prerequisites
 echo ""
 echo "-> Instalando pré-requisitos..."
-bash prerequisites.sh || { echo "Falha ao executar prerequisites.sh. Abortando."; exit 1; }
+bash "$DOTFILES_DIR/scripts/prerequisites.sh" || { echo "Falha ao executar prerequisites.sh. Abortando."; exit 1; }
 
 # install scripts
 install_scripts "tools"
