@@ -33,6 +33,7 @@ create_symlink() {
     ln -s "$target" "$link_name"
 }
 
+# function to execute scripts
 install_scripts() {
     local category="$1"
     for script in "$DOTFILES_DIR/install/$category"*.sh; do
