@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e # Pare o script em caso de erro
+set -e # stop the script if it gives an error
 
 echo ""
 echo "-> Iniciando configuração do ambiente..."
@@ -36,23 +36,28 @@ create_symlink() {
 # function to execute scripts
 install_scripts() {
     local category="$1"
-    for script in "$DOTFILES_DIR/install/$category"*.sh; do
+    shopt -s nullglob
+    local scripts=("$DOTFILES_DIR/install/$category"*.sh)
+    if [ ${#scripts[@]} -eq 0 ]; then
+        echo "Nenhum script encontrado em $DOTFILES_DIR/install/$category."
+        return
+    fi
+    for script in "${scripts[@]}"; do
         echo "Executando script: $script"
-        bash "$script"
+        bash "$script" || true
     done
 }
 
 # install system prerequisites
-install_scripts "system"
+bash prerequisites.sh || { echo "Falha ao executar prerequisites.sh. Abortando."; exit 1; }
 
-# install tools
+# check git installation
+command -v git >/dev/null 2>&1 || { echo "Git não está instalado. Abortando." >&2; exit 1; }
+
+# install scripts
 install_scripts "tools"
-
-# install utilities
 install_scripts "utilities"
-
-# install libraries and frameworks
-install_scripts "library"
+install_scripts "python-libraries"
 
 # create symlinks for dotfiles
 echo ""
@@ -73,7 +78,7 @@ rm -rf "$HOME/.p10k.zsh"
 create_symlink "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # reload new settings
-source ~/.zshrc
+source ~/.zshrc || { echo "Falha ao tentar aplicar as mudanças em ~/.zshrc. Reinicie seu terminal."; exit 1; }
 
 echo ""
 echo "-> Configuração do ambiente finalizada!"
