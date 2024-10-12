@@ -80,5 +80,8 @@ create_symlink "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 # reload new settings
 source ~/.zshrc || { echo "Falha ao tentar aplicar as mudanças em ~/.zshrc. Reinicie seu terminal."; exit 1; }
 
+# make it your default shell
+chsh -s $(which zsh) $USER
+
 echo ""
 echo "-> Configuração do ambiente finalizada!"
