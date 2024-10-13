@@ -126,3 +126,6 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# uv
+export PATH="$HOME/.cargo/bin:$PATH"
