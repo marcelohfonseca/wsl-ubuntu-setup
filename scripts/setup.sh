@@ -22,16 +22,6 @@ clone_dotfiles() {
     git clone https://github.com/marcelohfonseca/dotfiles.git "$DOTFILES_DIR"
 }
 
-# function to create a symlink
-create_symlink() {
-    local target="$1"
-    local link_name="$2"
-    if [ -e "$link_name" ]; then
-        rm -rf "$link_name"
-    fi
-    ln -s "$target" "$link_name"
-}
-
 # function to execute scripts
 install_scripts() {
     local category="$1"
@@ -55,7 +45,7 @@ install_scripts "python-libraries"
 # delete dotfiles
 echo ""
 echo "-> Deletando dotfiles..."
-rm -rf "$HOME/.aliases.sh"
+rm -rf "$HOME/.aliases"
 rm -rf "$HOME/.bashrc"
 rm -rf "$HOME/.bash_profile"
 rm -rf "$HOME/.gitconfig"
@@ -69,13 +59,13 @@ clone_dotfiles
 # create symlinks for dotfiles
 echo ""
 echo "-> Criando links simbólicos para os dotfiles..."
-create_symlink "$DOTFILES_DIR/aliases/aliases.sh" "$HOME/.aliases.sh"
-create_symlink "$DOTFILES_DIR/bash/.bashrc" "$HOME/.bashrc"
-create_symlink "$DOTFILES_DIR/bash/.bash_profile" "$HOME/.bash_profile"
-create_symlink "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
-create_symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
-create_symlink "$DOTFILES_DIR/zsh/.zprofile" "$HOME/.zprofile"
-create_symlink "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
+ln -s "$DOTFILES_DIR/aliases/.aliases" "$HOME/.aliases"
+ln -s "$DOTFILES_DIR/dotfiles/bash/.bashrc" "$HOME/.bashrc"
+ln -s "$DOTFILES_DIR/dotfiles/bash/.bash_profile" "$HOME/.bash_profile"
+ln -s "$DOTFILES_DIR/dotfiles/git/.gitconfig" "$HOME/.gitconfig"
+ln -s "$DOTFILES_DIR/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
+ln -s "$DOTFILES_DIR/dotfiles/zsh/.zprofile" "$HOME/.zprofile"
+ln -s "$DOTFILES_DIR/dotfiles/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # reload new settings
 echo ""
