@@ -37,6 +37,9 @@ echo ""
 echo "-> Instalando pré-requisitos..."
 bash "$DOTFILES_DIR/scripts/prerequisites.sh" || { echo "Falha ao executar prerequisites.sh. Abortando."; exit 1; }
 
+# delete content from .oh-my-zsh
+rm -rf "$HOME/.oh-my-zsh"
+
 # install scripts
 install_scripts "utilities"
 install_scripts "tools"
