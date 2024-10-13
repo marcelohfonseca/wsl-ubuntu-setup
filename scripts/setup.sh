@@ -19,7 +19,7 @@ clone_dotfiles() {
         fi
         rm -rf "$DOTFILES_DIR"
     fi
-    git clone git@github.com:marcelohfonseca/dotfiles.git "$DOTFILES_DIR"
+    git clone https://github.com/marcelohfonseca/dotfiles.git "$DOTFILES_DIR"
 }
 
 # function to create a symlink
