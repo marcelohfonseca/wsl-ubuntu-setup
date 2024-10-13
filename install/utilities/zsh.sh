@@ -6,7 +6,7 @@ sudo apt install zsh -y
 
 # install Oh My Zsh
 # https://github.com/ohmyzsh/ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # install package "zsh-syntax-highlighting"
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
