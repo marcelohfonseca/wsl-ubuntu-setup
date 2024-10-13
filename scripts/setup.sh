@@ -82,3 +82,5 @@ chsh -s $(which zsh) $USER
 
 echo ""
 echo "-> Configuração do ambiente finalizada!"
+
+exit
