@@ -75,6 +75,7 @@ ln -s "$HOME/.dotfiles/dotfiles/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 # reload new settings
 echo ""
 echo "-> Carregando perfil do zsh..."
+/bin/zsh
 source ~/.zshrc || { echo "Falha ao tentar aplicar as mudanças em ~/.zshrc. Reinicie seu terminal."; }
 
 # make it your default shell
