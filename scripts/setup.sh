@@ -35,7 +35,7 @@ install_scripts() {
 # install system prerequisites
 echo ""
 echo "-> Instalando pré-requisitos..."
-bash "$DOTFILES_DIR/scripts/prerequisites.sh" || { echo "Falha ao executar prerequisites.sh. Abortando."; exit 1; }
+bash "$DOTFILES_DIR/scripts/prerequisites.sh" || { echo "Falha ao executar prerequisites.sh. Abortando."; }
 
 # delete content from .oh-my-zsh
 rm -rf "$HOME/.oh-my-zsh"
@@ -73,7 +73,7 @@ ln -s "$DOTFILES_DIR/dotfiles/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 # reload new settings
 echo ""
 echo "-> Carregando perfil do zsh..."
-source ~/.zshrc || { echo "Falha ao tentar aplicar as mudanças em ~/.zshrc. Reinicie seu terminal."; exit 1; }
+source ~/.zshrc || { echo "Falha ao tentar aplicar as mudanças em ~/.zshrc. Reinicie seu terminal."; }
 
 # make it your default shell
 chsh -s $(which zsh) $USER
