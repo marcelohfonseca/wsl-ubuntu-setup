@@ -3,6 +3,6 @@
 # fonts
 sudo apt install fonts-firacode fonts-powerline
 
-# Cria diretórios para projetos
+# folder dev projects
 mkdir -p ~/dev
 chmod 755 ~/dev
