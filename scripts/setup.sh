@@ -62,13 +62,13 @@ clone_dotfiles
 # create symlinks for dotfiles
 echo ""
 echo "-> Criando links simbólicos para os dotfiles..."
-ln -s "$DOTFILES_DIR/aliases/.aliases" "$HOME/.aliases"
-ln -s "$DOTFILES_DIR/dotfiles/bash/.bashrc" "$HOME/.bashrc"
-ln -s "$DOTFILES_DIR/dotfiles/bash/.profile" "$HOME/.profile"
-ln -s "$DOTFILES_DIR/dotfiles/git/.gitconfig" "$HOME/.gitconfig"
-ln -s "$DOTFILES_DIR/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
-ln -s "$DOTFILES_DIR/dotfiles/zsh/.zprofile" "$HOME/.zprofile"
-ln -s "$DOTFILES_DIR/dotfiles/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
+ln -s "$HOME/.dotfiles/aliases/.aliases" "$HOME/.aliases"
+ln -s "$HOME/.dotfiles/dotfiles/bash/.bashrc" "$HOME/.bashrc"
+ln -s "$HOME/.dotfiles/dotfiles/bash/.profile" "$HOME/.profile"
+ln -s "$HOME/.dotfiles/dotfiles/git/.gitconfig" "$HOME/.gitconfig"
+ln -s "$HOME/.dotfiles/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
+ln -s "$HOME/.dotfiles/dotfiles/zsh/.zprofile" "$HOME/.zprofile"
+ln -s "$HOME/.dotfiles/dotfiles/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # reload new settings
 echo ""
