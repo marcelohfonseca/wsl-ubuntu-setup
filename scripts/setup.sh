@@ -52,22 +52,29 @@ install_scripts "tools"
 install_scripts "utilities"
 install_scripts "python-libraries"
 
+# delete dotfiles
+echo ""
+echo "-> Deletando dotfiles..."
+rm -rf "$HOME/.aliases.sh"
+rm -rf "$HOME/.bashrc"
+rm -rf "$HOME/.bash_profile"
+rm -rf "$HOME/.gitconfig"
+rm -rf "$HOME/.zshrc"
+rm -rf "$HOME/.zprofile"
+rm -rf "$HOME/.p10k.zsh"
+
+# clone dotfiles
+clone_dotfiles
+
 # create symlinks for dotfiles
 echo ""
 echo "-> Criando links simbólicos para os dotfiles..."
-rm -rf "$HOME/.aliases.sh"
 create_symlink "$DOTFILES_DIR/aliases/aliases.sh" "$HOME/.aliases.sh"
-rm -rf "$HOME/.bashrc"
 create_symlink "$DOTFILES_DIR/bash/.bashrc" "$HOME/.bashrc"
-rm -rf "$HOME/.bash_profile"
 create_symlink "$DOTFILES_DIR/bash/.bash_profile" "$HOME/.bash_profile"
-rm -rf "$HOME/.gitconfig"
 create_symlink "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
-rm -rf "$HOME/.zshrc"
 create_symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
-rm -rf "$HOME/.zprofile"
 create_symlink "$DOTFILES_DIR/zsh/.zprofile" "$HOME/.zprofile"
-rm -rf "$HOME/.p10k.zsh"
 create_symlink "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # reload new settings
