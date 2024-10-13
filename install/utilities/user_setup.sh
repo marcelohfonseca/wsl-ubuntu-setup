@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # fonts
-sudo apt install fonts-firacode fonts-powerline
+sudo apt install fonts-firacode fonts-powerline fonts-font-awesome
 
 # folder dev projects
 mkdir -p ~/dev
