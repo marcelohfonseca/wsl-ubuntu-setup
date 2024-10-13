@@ -43,6 +43,8 @@ rm -rf "$HOME/.oh-my-zsh"
 # install scripts
 install_scripts "utilities"
 install_scripts "tools"
+
+source $HOME/.cargo/env
 install_scripts "python-libraries"
 
 # delete dotfiles
