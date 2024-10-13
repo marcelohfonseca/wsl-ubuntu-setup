@@ -50,7 +50,7 @@ git clone git@github.com:marcelohfonseca/dotfiles.git ~/.dotfiles
 
 ```
 
-### Dê permissões de execução para o arquivo principal
+#### Dê permissões de execução para o arquivo principal
 ```sh
 chmod +x ~/.dotfiles/scripts/setup.sh
 ```
