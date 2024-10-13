@@ -22,7 +22,7 @@ Este repositório contém meus arquivos de configuração (dotfiles) para bash, 
 │   ├── apps/
 │   │   └── apps.sh
 │   ├── python-libraries/
-│   │   └── data_science.sh
+│   │   ├── data_science.sh
 │   │   └── global.sh
 │   ├── tools/
 │   │   ├── asdf.sh
@@ -32,11 +32,11 @@ Este repositório contém meus arquivos de configuração (dotfiles) para bash, 
 │   │   ├── pyenv.sh
 │   │   ├── python_package_manager.sh
 │   │   ├── terminal_tools.sh
-│   │   └── zsh.sh
 │   └── utilities/
-│       └── user_setup.sh
+│       ├── user_setup.sh
+│       └── zsh.sh
 ├── scripts/
-│   └── prerequisites.sh
+│   ├── prerequisites.sh
 │   └── setup.sh
 └── README.md
 ```
@@ -64,9 +64,9 @@ git clone git@github.com:marcelohfonseca/dotfiles.git ~/.dotfiles
 1. Clona o repositório para ~/.dotfiles (ou sobrescreve se já existir).
 2. Instala pré-requisitos do sistema.
 3. Executa os scripts de instalação em ordem:
-    * **tools**/: Instala ferramentas como zsh, pyenv, docker, etc.
-    * **utilities**/: Configura o usuário, como o arquivo .gitconfig.
-    * **library**/: Instala bibliotecas e frameworks.
+    * **utilities**/: Configura o usuário, como o arquivo .gitconfig e instala o zsh.
+    * **tools**/: Instala ferramentas como asdf, docker, gitflow, gh, pyenv, etc.
+    * **python-libraries**/: Instala bibliotecas do python.
     * **apps**/: Instala os aplicativos snap ou .deb do Ubuntu.
 4. Cria links simbólicos dos dotfiles para o diretório $HOME.
 5. Recarrega as novas configurações do zsh.
