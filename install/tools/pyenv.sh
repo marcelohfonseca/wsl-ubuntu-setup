@@ -9,8 +9,8 @@ cd ~/.pyenv && src/configure && make -C src; cd ~
 
 # adjust the session-wide environment for your .zshrc file
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-echo 'if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi' >> ~/.zshrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 
 # install the Python build dependencies for pyenv
 sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
