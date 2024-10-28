@@ -15,7 +15,8 @@ clone_dotfiles() {
     if [ -d "$DOTFILES_DIR" ]; then
         read -p "O diretório .dotfiles já existe. Deseja sobrescrevê-lo? (y/n) " confirm
         if [[ "$confirm" != "y" ]]; then
-            exit 1
+            echo "Operação cancelada. O diretório .dotfiles não foi sobrescrito."
+            return
         fi
         rm -rf "$DOTFILES_DIR"
     fi
