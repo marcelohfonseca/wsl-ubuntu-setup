@@ -47,6 +47,7 @@ install_scripts "tools"
 
 source $HOME/.cargo/env
 install_scripts "python-libraries"
+export PATH="/home/marcelo/.local/bin:$PATH"
 
 # delete dotfiles
 echo ""
