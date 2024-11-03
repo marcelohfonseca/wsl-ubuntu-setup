@@ -7,8 +7,7 @@ echo "-> Iniciando configuração do ambiente..."
 
 # directory of the script
 DOTFILES_DIR="$HOME/.dotfiles"
-ALIASES_DIR="$DOTFILES_DIR/aliases"
-INSTALL_DIR="$DOTFILES_DIR/install"
+SETUP_DIR="$HOME/.wsl-ubuntu-setup"
 
 # function to clone dotfiles
 clone_dotfiles() {
@@ -26,7 +25,7 @@ clone_dotfiles() {
 # function to execute scripts
 install_scripts() {
     local category="$1"
-    for script in "$DOTFILES_DIR/install/$category/"*.sh; do
+    for script in "$SETUP_DIR/install/$category/"*.sh; do
         echo ""
         echo "-> Executando script: $script"
         bash "$script"
@@ -36,7 +35,7 @@ install_scripts() {
 # install system prerequisites
 echo ""
 echo "-> Instalando pré-requisitos..."
-bash "$DOTFILES_DIR/scripts/prerequisites.sh" || { echo "Falha ao executar prerequisites.sh. Abortando."; }
+bash "$SETUP_DIR/install/prerequisites.sh" || { echo "Falha ao executar prerequisites.sh. Abortando."; }
 
 # delete content from .oh-my-zsh
 rm -rf "$HOME/.oh-my-zsh"
@@ -53,8 +52,6 @@ export PATH="/home/marcelo/.local/bin:$PATH"
 echo ""
 echo "-> Deletando dotfiles..."
 rm -rf "$HOME/.aliases"
-rm -rf "$HOME/.bashrc"
-rm -rf "$HOME/.profile"
 rm -rf "$HOME/.gitconfig"
 rm -rf "$HOME/.zshrc"
 rm -rf "$HOME/.zprofile"
@@ -67,12 +64,10 @@ clone_dotfiles
 echo ""
 echo "-> Criando links simbólicos para os dotfiles..."
 ln -s "$HOME/.dotfiles/aliases/.aliases" "$HOME/.aliases"
-ln -s "$HOME/.dotfiles/dotfiles/bash/.bashrc" "$HOME/.bashrc"
-ln -s "$HOME/.dotfiles/dotfiles/bash/.profile" "$HOME/.profile"
-ln -s "$HOME/.dotfiles/dotfiles/git/.gitconfig" "$HOME/.gitconfig"
-ln -s "$HOME/.dotfiles/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
-ln -s "$HOME/.dotfiles/dotfiles/zsh/.zprofile" "$HOME/.zprofile"
-ln -s "$HOME/.dotfiles/dotfiles/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
+ln -s "$HOME/.dotfiles/git/.gitconfig" "$HOME/.gitconfig"
+ln -s "$HOME/.dotfiles/zsh/.zshrc" "$HOME/.zshrc"
+ln -s "$HOME/.dotfiles/zsh/.zprofile" "$HOME/.zprofile"
+ln -s "$HOME/.dotfiles/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # reload new settings
 echo ""
