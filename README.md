@@ -46,19 +46,19 @@ Este repositório contém meus arquivos de configuração (dotfiles) para bash, 
 #### Clone o repositório
 
 ```sh
-git clone git@github.com:marcelohfonseca/dotfiles.git ~/.dotfiles
+git clone git@github.com:marcelohfonseca/wsl-ubuntu-setup.git ~/.wsl-ubuntu-setup
 
 ```
 
 #### Dê permissões de execução para o arquivo principal
 ```sh
-chmod +x ~/.dotfiles/scripts/setup.sh
+chmod +x ~/.wsl-ubuntu-setup/scripts/setup.sh
 ```
 
 #### Execute o script de instalação
 
 ```sh
-~/.dotfiles/scripts/setup.sh
+~/.wsl-ubuntu-setup/scripts/setup.sh
 ```
 
 * O script irá instalar todas as dependências, configurar as ferramentas e criar os links simbólicos para os dotfiles.
