@@ -30,10 +30,14 @@ plugins=(
 # Source aliases if they exist
 [[ ! -f ~/.aliases ]] || source ~/.aliases
 
+# Editor used by CLI
+#export EDITOR="nvim"
+#export SUDO_EDITOR="$EDITOR"
+
 # pyenv config
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # uv
-export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH="$HOME/.cargo/bin:$PATH"
