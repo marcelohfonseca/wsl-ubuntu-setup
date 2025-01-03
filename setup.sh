@@ -44,7 +44,7 @@ rm -rf "$HOME/.oh-my-zsh"
 install_scripts "utilities"
 install_scripts "tools"
 
-source $HOME/.cargo/env
+#source $HOME/.cargo/env
 install_scripts "python-libraries"
 export PATH="/home/marcelo/.local/bin:$PATH"
 
